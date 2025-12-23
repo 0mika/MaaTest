@@ -1,0 +1,43 @@
+{
+    "interface_version": 2,
+    "name": "自动化",
+    // "agent": {
+    //     "child_exec": "uv",
+    //     "child_args": [
+    //         "run",
+    //         "./agent/main.py"
+    //     ]
+    // },
+    "controller": [
+        {
+            "name": "win",
+            "label": "$电脑端",
+            "description": "测试版本",
+            "type": "Win32",
+            "win32": {
+                "class_regex": ".*",
+                "window_regex": "微信",
+                "screencap": "FramePool",
+                "mouse": "SendMessage",
+                "keyboard": "SendMessage"
+            }
+        }
+    ],
+    "resource": [ 
+        //可以有多个不同的resource文件夹，对应不同的服务器
+        {
+            "name": "Official",
+            "label": "$官服资源",
+            "path": [
+                "resource"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "文件传输",
+            "entry": "点击"
+        }
+    ],
+    "option": {}
+}

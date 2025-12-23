@@ -1,0 +1,7 @@
+{
+    "点击": {
+        "recognition": "OCR",
+        "expected": "文件传输",
+        "action": "Click"
+    }
+}

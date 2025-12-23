@@ -1,0 +1,10 @@
+[project]
+name = "maatest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "json-with-comments>=1.2.10",
+    "maafw>=5.2.6",
+]
