@@ -5,7 +5,8 @@
                 "/assets/resource/**/*.json",
                 "/install/resource/**/*.json",
                 "/assets/resource/data/**/**.json",
-                "/install/resource/data/**/**.json"
+                "/install/resource/data/**/**.json",
+                "!assets/resource/default_pipeline.json"
             ],
             "url": "/deps/tools/pipeline.schema.json"
         },
@@ -24,7 +25,12 @@
         }
     ],
     "files.exclude": {
-        "__pycache__": true
+        "__pycache__": true,
+        "deps/bin":true,
+        "deps/include":true,
+        "deps/share":true,
+        "deps/lib":true,
+        "deps/symbol":true,
     },
     "files.associations": {
         "**/assets/**/*.json": "jsonc",

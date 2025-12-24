@@ -1,7 +1,30 @@
 {
     "点击": {
-        "recognition": "OCR",
-        "expected": "文件传输",
-        "action": "Click"
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "文件传输"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": []
+    },
+    "自定义行为": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "MyCustomAction",
+                "custom_action_param": {
+                    "str": "hello"
+                }
+            }
+        },
+        "next": []
     }
 }

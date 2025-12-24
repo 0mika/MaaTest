@@ -11,7 +11,16 @@ wheels/
 
 # deps
 deps/*
-install/
-assets/config/*
+!deps/.gitkeep
+
+# temporary file
+assets/config/
+debug
+
+# OCR model
 assets/MaaCommonAssets/*
 assets/resource/model/ocr/*
+!assets/resource/model/ocr/.gitkeep
+
+# Compiled Object files
+install/
