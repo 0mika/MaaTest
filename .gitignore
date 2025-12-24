@@ -14,7 +14,7 @@ deps/*
 !deps/.gitkeep
 
 # temporary file
-assets/config/
+assets/config/maa_pi_config.json
 debug
 
 # OCR model

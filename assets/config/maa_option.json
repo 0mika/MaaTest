@@ -1,0 +1,17 @@
+{
+    "logging": true, // 是否保存日志文件到 debug/ 目录
+    "save_draw": false, // 是否保存识别结果的可视化图像
+    "save_on_error": true, // 是否在发生错误时保存当前图像
+    "stdout_level": 2, // 控制台日志级别 (0=静默, 7=全部)
+    "draw_quality": 85 // 可视化图像的JPEG质量 (0-100)
+} /*
+stdout_level对应以下枚举值
+0: Off (静默)
+1: Fatal
+2: Error (默认)
+3: Warn
+4: Info
+5: Debug
+6: Trace
+7: All (全部)
+*/

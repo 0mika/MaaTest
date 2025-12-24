@@ -26,6 +26,8 @@
     ],
     "files.exclude": {
         "__pycache__": true,
+        "assets/MaaCommonAssets": true,
+        "deps/*.md":true,
         "deps/bin":true,
         "deps/include":true,
         "deps/share":true,

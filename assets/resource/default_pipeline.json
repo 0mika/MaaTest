@@ -14,28 +14,28 @@
         "post_delay": 200 // 动作后到下一次识别的延迟
     },
     // ===== 识别算法默认配置 =====
-    // // 模板匹配（找图）
-    // "TemplateMatch": {
-    //     "recognition": "TemplateMatch",
-    //     "threshold": 0.7, // 匹配阈值，越高越严格
-    //     "method": 5 // 匹配算法：5=归一化相关系数（推荐）
-    //     // 可选 v2 格式（与 v1 等效）：
-    //     // "recognition": {
-    //     //     "type": "TemplateMatch",
-    //     //     "param": {
-    //     //         "threshold": 0.7,
-    //     //         "method": 5
-    //     //     }
-    //     // }
-    // },
-    // // 文字识别（OCR）
-    // "OCR": {
-    //     "recognition": "OCR",
-    //     "model": "OCR", // 使用的模型名称（需在 model/ocr 目录下）
-    //     "threshold": 0.3, // 置信度阈值
-    //     "order_by": "Horizontal", // 排序方式：Horizontal | Vertical | Area | Length
-    //     "replace": [] // 文字替换规则列表，格式：[["待替换字符串", "替换为"]]
-    // },
+    // 模板匹配（找图）
+    "TemplateMatch": {
+        "recognition": "TemplateMatch",
+        "threshold": 0.7, // 匹配阈值，越高越严格
+        "method": 5 // 匹配算法：5=归一化相关系数（推荐）
+        // 可选 v2 格式（与 v1 等效）：
+        // "recognition": {
+        //     "type": "TemplateMatch",
+        //     "param": {
+        //         "threshold": 0.7,
+        //         "method": 5
+        //     }
+        // }
+    },
+    // 文字识别（OCR）
+    "OCR": {
+        "recognition": "OCR",
+        // "model": "OCR", // 使用的模型名称（需在 model/ocr 目录下）
+        "threshold": 0.3, // 置信度阈值
+        "order_by": "Horizontal", // 排序方式：Horizontal | Vertical | Area | Length
+        "replace": [] // 文字替换规则列表，格式：[["待替换字符串", "替换为"]]
+    },
     // ===== 动作类型默认配置 =====
     // 点击
     "Click": {
