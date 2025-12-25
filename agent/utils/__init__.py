@@ -1,6 +1,4 @@
-
 try:
     from .logger import *
-    print("日志模块导入成功")
-except:
-    print("error")
+except Exception as e:
+    logger.exception("agent运行过程中发生异常:{e}")

@@ -40,8 +40,14 @@
             "name": "代理动作",
             "entry": "自定义行为",
             "option": [
-                "选择项目",
-                "自定义选择"
+                "选择项目"
+            ]
+        },
+        {
+            "name": "代理动作2",
+            "entry": "StartWorkflow",
+            "option": [
+                "循环次数"
             ]
         }
     ],
@@ -71,26 +77,21 @@
                 }
             ]
         },
-        "自定义选择": {
+        "循环次数": {
             "type": "input",
             "inputs": [
                 {
                     "name": "章节号",
                     "description": "章节号，用阿拉伯数字表示",
-                    "default": "1",
-                    "pipeline_type": "string"
-                },
-                {
-                    "name": "关卡号",
-                    "description": "关卡号，用阿拉伯数字表示",
-                    "default": "4",
-                    "pipeline_type": "string"
+                    "default": "3",
+                    "pipeline_type": "int"
                 }
             ],
             "pipeline_override": {
-                "自定义行为": {
+                "StartWorkflow": {
                     "custom_action_param": {
-                        "str": "{章节号}-{关卡号}"
+                        "max_loops": "{章节号}",
+                        "loop_count":0
                     }
                 }
             }

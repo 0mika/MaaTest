@@ -15,7 +15,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Pipeline_v2":{
+	"通用节点": {
 		"scope": "jsonc",
 		"prefix": "node",
 		"body": [
@@ -28,6 +28,253 @@
 			"\t\t\"param\": {$5}\n\t},",
 			"\t\"next\": [$6]\n},"
 		]
+	},
+	"跳过识别": {
+		"scope": "jsonc",
+		"prefix": "reco.hit",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"DirectHit\"\n},"
+		]
+	},
+	"图片匹配": {
+		"scope": "jsonc",
+		"prefix": "reco.template",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"TemplateMatch\",",
+			"\t\"param\":{",
+			"\t\t\"template\":${1:\"\"}",
+			"\t}\n},"
+		]
+	},
+	"特征匹配": {
+		"scope": "jsonc",
+		"prefix": "reco.feature",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"FeatureMatch\",",
+			"\t\"param\":{",
+			"\t\t\"template\":${1:\"\"}",
+			"\t}\n},"
+		],
+		"description": "泛化能力更强的“找图”，具有抗透视、抗尺寸变化等特点"
+	},
+	"颜色匹配": {
+		"scope": "jsonc",
+		"prefix": "reco.color",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"ColorMatch\",",
+			"\t\"param\":{",
+			"\t\t\"upper\":[$1],",
+			"\t\t\"lower\":[$2]",
+			"\t}\n},"
+		]
+	},
+	"OCR": {
+		"scope": "jsonc",
+		"prefix": "reco.ocr",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"OCR\",",
+			"\t\"param\":{",
+			"\t\t\"expected\":\"$1\"",
+			"\t}\n},"
+		]
+	},
+	"自定义识别方法": {
+		"scope": "jsonc",
+		"prefix": "reco.custom",
+		"body": [
+			"\"recognition\": {",
+			"\t\"type\": \"Custom\",",
+			"\t\"param\":{",
+			"\t\t\"custom_recognition\":$1",
+			"\t}\n},"
+		]
+	},
+	"跳过动作": {
+		"scope": "jsonc",
+		"prefix": "act.nothing",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"DoNothing\"\n},"
+		]
+	},
+	"点击": {
+		"scope": "jsonc",
+		"prefix": "act.click",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"Click\"\n},"
+		]
+	},
+	"长按": {
+		"scope": "jsonc",
+		"prefix": "act.press",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"LongPress\"\n},"
+		]
+	},
+	"线性滑动": {
+		"scope": "jsonc",
+		"prefix": "act.swipe",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"Swipe\"\n},"
+		]
+	},
+	"多指线性滑动": {
+		"scope": "jsonc",
+		"prefix": "act.multiswipe",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"MultiSwipe\",",
+			"\t\"param\":{",
+			"\t\t\"swipes\":[{$1}]",
+			"\t}\n},"
+		]
+	},
+	"按下触控点": {
+		"scope": "jsonc",
+		"prefix": "act.touchdown",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"TouchDown\"\n},"
+		]
+	},
+	"移动触控点": {
+		"scope": "jsonc",
+		"prefix": "act.touchmove",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"TouchMove\"\n},"
+		]
+	},
+	"抬起触控点": {
+		"scope": "jsonc",
+		"prefix": "act.touchup",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"TouchUp\"\n},"
+		]
+	},
+	"鼠标滚轮滚动": {
+		"scope": "jsonc",
+		"prefix": "act.scroll",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"Scroll\"\n},"
+		]
+	},
+	"单击按键": {
+		"scope": "jsonc",
+		"prefix": "act.click_key",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"ClickKey\",",
+			"\t\"param\":{",
+			"\t\t\"key\":$1",
+			"\t}\n},"
+		]
+	},
+	"长按按键": {
+		"scope": "jsonc",
+		"prefix": "act.press_key",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"LongPressKey\",",
+			"\t\"param\":{",
+			"\t\t\"key\":$1",
+			"\t}\n},"
+		]
+	},
+	"按下按键": {
+		"scope": "jsonc",
+		"prefix": "act.down_key",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"KeyDown\",",
+			"\t\"param\":{",
+			"\t\t\"key\":$1",
+			"\t}\n},"
+		]
+	},
+	"释放按键": {
+		"scope": "jsonc",
+		"prefix": "act.up_key",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"KeyUp\",",
+			"\t\"param\":{",
+			"\t\t\"key\":$1",
+			"\t}\n},"
+		]
+	},
+	"输入文本": {
+		"scope": "jsonc",
+		"prefix": "act.input",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"InputText\",",
+			"\t\"param\":{",
+			"\t\t\"input_text\":\"$1\"",
+			"\t}\n},"
+		]
+	},
+	"启动应用": {
+		"scope": "jsonc",
+		"prefix": "act.startapp",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"StartApp\",",
+			"\t\"param\":{",
+			"\t\t\"package\":\"$1\"",
+			"\t}\n},"
+		]
+	},
+	"关闭应用": {
+		"scope": "jsonc",
+		"prefix": "act.stopapp",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"StopApp\",",
+			"\t\"param\":{",
+			"\t\t\"package\":\"$1\"",
+			"\t}\n},"
+		]
+	},
+	"停止当前任务链": {
+		"scope": "jsonc",
+		"prefix": "act.stoptask",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"StopTask\"\n},"
+		]
+	},
+	"执行命令": {
+		"scope": "jsonc",
+		"prefix": "act.cmd",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"Command\",",
+			"\t\"param\":{",
+			"\t\t\"exec\":\"$1\",",
+			"\t\t\"args\":[$1]",
+			"\t}\n},"
+		]
+	},
+	"自定义动作": {
+		"scope": "jsonc",
+		"prefix": "act.custom",
+		"body": [
+			"\"action\": {",
+			"\t\"type\": \"Custom\",",
+			"\t\"param\":{",
+			"\t\t\"custom_action\":$1",
+			"\t}\n},"
+		]
 	}
-	
 }

@@ -3,5 +3,6 @@ from .reco import *
 
 __all__ = [
     "MyCustomAction",
-    "MyCustomRecognition"
+    "MyCustomRecognition",
+    "LoopControl"
 ]
