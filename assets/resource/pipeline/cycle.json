@@ -1,0 +1,35 @@
+{
+    "StartWorkflow": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "Init"
+            }
+        },
+        "next": [
+            "ProcessStep1"
+        ]
+    },
+    "ProcessStep1": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "MyCustomAction"
+            }
+        },
+        "next": [
+            "ProcessStep2"
+        ]
+    },
+    "ProcessStep2": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "LoopControl"
+            }
+        }
+    },
+    "ExitLoop": {
+        "action": "DoNothing"
+    }
+}

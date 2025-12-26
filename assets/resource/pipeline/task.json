@@ -13,16 +13,12 @@
     },
     "自定义行为": {
         "recognition": {
-            "type": "DirectHit",
-            "param": {}
+            "type": "DirectHit"
         },
         "action": {
             "type": "Custom",
             "param": {
-                "custom_action": "MyCustomAction",
-                "custom_action_param": {
-                    "str": "hello"
-                }
+                "custom_action": "MyCustomAction"
             }
         },
         "next": []
